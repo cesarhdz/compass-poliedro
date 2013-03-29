@@ -6,9 +6,9 @@ require 'compass-poliedro/version'
 Gem::Specification.new do |gem|
   gem.name          = "compass-poliedro"
   gem.version       = Compass::Poliedro::VERSION
-  gem.authors       = ["C\xC3\xA9sar Hern\xC3\xA1ndez"]
-  gem.email         = ["acer.mrshortcuts@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
+  gem.authors       = ["César Hernández"]
+  gem.email         = ["mrshortcuts@gmail.com"]
+  gem.description   = %q{Compass Extension with handy mixins}
   gem.summary       = %q{TODO: Write a gem summary}
   gem.homepage      = ""
 
