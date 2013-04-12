@@ -1,0 +1,52 @@
+
+@import "helpers/reset";
+
+// Mixin con funciones básicas
+@mixin menu-drop-down-2 {
+	
+	ul {@include clearfix;}
+
+	ul, li{ @include reset-layout; }
+
+
+	// Los enlaces de priomer nivel van horizontales
+	li {
+		float:left;
+		display:block;
+	}
+
+
+	// Ocultamos el submenú por default
+	ul ul{
+		@include invisible;
+	}
+
+	// Lo mostramos cuando se de click en :hover
+	li:hover ul{
+		left:auto;
+	}
+
+	// Sólo en los touch, se aplica el reemplazo de :hover
+	.touch & {
+		li.open ul{ left:auto; }
+	}	
+
+	li li{
+		float:none;
+		clear:both;
+	}
+}
+
+
+@mixin menu-centered{
+	ul{
+		@include clearfix;
+		text-align:center;
+	}
+
+	ul, li {@extend reset;}
+
+	li {
+		display:inline;
+	}
+}

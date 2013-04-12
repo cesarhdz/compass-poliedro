@@ -1,0 +1,18 @@
+/*
+Helpers para posicionar elementos
+ */
+
+@mixin out-of-window {
+	position:absolute;
+	left:-9999em;
+}
+
+// Cura para los que se les aplica out-of-window
+@mixin in-window{
+	position:relative;
+	left:auto;
+}
+
+@mixin inaccesible{
+	visibility:hidden;
+}

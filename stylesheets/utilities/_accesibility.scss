@@ -1,0 +1,44 @@
+/*
+ * cesarhdz/utilities/accesibility.scss
+ *
+ * Rules to provide accesibility to screen readers and provide a way
+ * to show/hide form visual browsers.
+ *
+ * %visible and %hidden based on Stitch accesbility
+ * https://github.com/anthonyshort/stitch-css/blob/master/stylesheets/stitch/patterns/accessibility/_hide-content.scss
+ */ 
+
+/*
+ * Invisible
+ * Hide only visually, but have it available for screenreaders 
+ *   www.webaim.org/techniques/css/invisiblecontent/ 
+ *   Solution from: j.mp/visuallyhidden - Thanks Jonathan Neal!
+ */   
+%invisible {
+	position: absolute;    
+  	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  	clip: rect(1px, 1px, 1px, 1px);
+}
+
+/**
+ * Visible
+ * Reverts invisible rules, useful for toggling visibility
+ */
+%visible{
+	// @TEST Test if change position is relevant
+	// position:relative;
+	overflow:visible;
+	clip:auto;
+}
+
+/**
+ * Hidden
+ *
+ * Hide elements from screen reades and browsers
+ * 
+ * 	css-discuss.incutio.com/wiki/Screenreader_Visibility
+ */
+%hidden {
+	display:none;
+	visibility:hidden;
+} 

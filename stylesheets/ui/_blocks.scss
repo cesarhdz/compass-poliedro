@@ -1,0 +1,38 @@
+
+/*
+ * Bloque
+ * Mixiqn que permite agregar un color d fondo del tamaño
+ * de la pantalla, el único problema es que si existen algunos
+ * elementos que se muestran con con posicion absoluta sobe
+ * se pierden debajo, a menos que se le ponga
+ * un indice menor, pero provoca pueda no verse el contenido
+ */  
+
+@mixin bloque($sides:'both'){
+	// Es necesario incluir la posicion relativa
+	position:relative;
+
+	@content;
+
+	&:before,
+	&:after{
+		   content: "";
+		   position: absolute;
+		   // background: rgba(255, 255, 255, .4);  /* Match the background */
+		   top: 0; bottom: 0;
+		   width: 9999px;   /* some huge width */
+
+		   // z-index:-1;
+
+		   // Incluimos el contenido
+		   @content;
+	}
+
+	&:before{
+		left:100%;
+	}
+
+	&:after{
+		right:100%;
+	}
+}

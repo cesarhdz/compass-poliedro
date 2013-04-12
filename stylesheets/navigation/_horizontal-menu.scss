@@ -1,0 +1,38 @@
+/**
+ * Navigation/menu-horizontal.scss
+ */
+
+@import 'cesarhdz/normalize/navigation';
+@import 'cesarhdz/utilities/accesibility';
+
+/**
+ * Mixin que tiene los estilos básicos para un menu horizontal de varios niveles
+ *
+ * Sintaxis:
+ * 	nav>ul>li>(a>ul...)
+ *
+ * Debe aplicarse a la etiqueta nav
+ *
+ * La abstaracción sólo provee funcioanlidad básica
+ * las dimensiones, colores y estilos deben aplicarse
+ * por separado
+ */
+%horizontal-menu{
+
+	@extend %normal-nav;
+
+	// Primeros enlaces
+	> ul > li{
+		display:block;
+		float:left;
+	}
+
+	// Submenu oculto
+	li ul{
+		@extend %invisible;
+	}
+
+	li:hover ul{
+		@extend %visible;
+	}
+}
