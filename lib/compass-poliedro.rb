@@ -1,4 +1,4 @@
-require "compass-poliedro/version"
+require_relative "compass-poliedro/version"
 
 module Compass
   module Poliedro
