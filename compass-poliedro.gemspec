@@ -1,7 +1,5 @@
 # -*- encoding: utf-8 -*-
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'compass-poliedro/version'
+require './lib/compass-poliedro'
 
 Gem::Specification.new do |gem|
   gem.name          = "compass-poliedro"
@@ -9,11 +7,16 @@ Gem::Specification.new do |gem|
   gem.authors       = ["César Hernández"]
   gem.email         = ["mrshortcuts@gmail.com"]
   gem.description   = %q{Compass Extension with handy mixins}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.summary       = %q{Compass Extension with handy mixins}
   gem.homepage      = ""
 
-  gem.files         = `git ls-files`.split($/)
-  gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
+
+    # Gems Dependencies
+  # Gem names and versions that are required for your Compass extension.
+  # These are Gem dependencies, not Compass dependencies. Including gems
+  #  here will make sure the relevant gem and version are installed on the
+  #  user's system when installing your gem.
+  gem.add_dependency("sass",      [">=3.2.0"])
+  gem.add_dependency("compass",   [">= 0.12.1"])
 end
