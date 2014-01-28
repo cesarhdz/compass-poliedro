@@ -19,3 +19,8 @@ tmp
 
 # Sublime Text
 *.sublime-workspace
+
+# Dev Mode (Serve + Compass)
+.sass-cache/
+public/*
+!public/.gitkeep
