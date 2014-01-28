@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title><%= @title %></title>
+
+    <!-- Es importante agergar primero las fuentes y luego los estilos -->
+    <link rel="stylesheet" href="/css/features/index.css">
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <main>
+      <h1><%= @title %></h1>
+      <%= yield %>
+    </main><!-- main > div -->
+  </body>
+</html>
