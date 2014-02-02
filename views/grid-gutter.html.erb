@@ -1,20 +1,20 @@
-<% @title = "Basic Grid" %>
+<% @title = "Grid With Gutter" %>
 
 
 <pre>
-	<code>@include poliedro-grid('grid-a', 0, 12);</code>
+	<code>@include poliedro-grid('grid-b', 3, 12);</code>
 </pre>
 
 <section>
 <% (1..12).each do |col| %>
 	<% complement =  12 - col %>
 
-	<div class="grid-a-<%= col %>">
+	<div class="grid-b-<%= col %>">
 		<p>Column <%= col  %></p>
 	</div>
 
 	<% if(complement > 0) %>
-	<div class="grid-a-<%= complement %> grid-a-omega">
+	<div class="grid-b-<%= complement %> grid-b-omega">
 		<p>Column <%= complement  %></p>
 	</div>
 	<% end %>
