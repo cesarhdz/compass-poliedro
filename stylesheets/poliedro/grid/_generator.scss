@@ -19,21 +19,29 @@
 }
 
 
-
 @function get_column_width($size, $gutter, $columnNumber: 12, $precision: 1){
 	$gutterTotal: ($columnNumber - 1) * $gutter;
-	$columnWidth: ((100 - $gutterTotal) / $columnNumber) / 100;
+	$columnWidth: ((100 - ($gutterTotal * 100)) / $columnNumber) / 100;
 
-	@return percentage(($columnWidth * $size)) - ($precision / 10);
+	$result: ($columnWidth * $size) + (($size - 1) * $gutter);
+
+	@return percentage($result) - ($precision / 10);
 }
  
 @mixin poliedro-column($size, $gutter, $columnNumber){
 	width: get_column_width($size, $gutter, $columnNumber);
+
+	@if($gutter){
+		margin-right:percentage($gutter);
+	}
 }
 
 @mixin poliedro-omega{
+	// To fit 100% width, regarless $precition value
 	right:0;
+	
 	clear:right;
+	margin-right:0;
 }
 
 
@@ -42,7 +50,7 @@
 	@for $i from 1 through $columns{
 		.#{$prefix}-#{$i}{
 			@extend %poliedro-column;
-			@include poliedro-column($i, $gutter, $columns);
+			@include poliedro-column($i, $gutter / 100, $columns);
 		}
 	}
 

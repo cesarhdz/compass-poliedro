@@ -13,14 +13,15 @@ main{
 }
 
 
-[class^=col]{
+[class^=grid-]{
 	background-color:#F9F9F9;
 	border:1px solid #D4D4D4;
 
 	margin-bottom:1em;
-
 	text-align: center;
 }
 
 
-@include poliedro-grid('col', 0, 12);
+@include poliedro-grid('grid-a', 0, 12);
+
+@include poliedro-grid('grid-b', 3, 12);
