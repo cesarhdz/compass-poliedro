@@ -48,14 +48,14 @@
 @mixin poliedro-grid($prefix, $gutter, $columns: 12, $padding: 0){
 	// Base columns
 	@for $i from 1 through $columns{
-		.#{$prefix}-#{$i}{
+		#{$prefix}-#{$i}{
 			@extend %poliedro-column;
 			@include poliedro-column($i, $gutter / 100, $columns);
 		}
 	}
 
 	// Omega column
-	.#{$prefix}-omega{
+	#{$prefix}-omega{
 		@include poliedro-omega();
 	}
 }
