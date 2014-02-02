@@ -1,3 +1,27 @@
-body{
-	background-color: red;
+/** features/index */
+// This file is meant to be compiled in development
+
+@import "poliedro";
+
+
+main{
+	max-width:1280px;
+	min-width:320px;
+
+	margin-left:auto;
+	margin-right:auto;
 }
+
+
+[class^=grid-]{
+	background-color:#F9F9F9;
+	border:1px solid #D4D4D4;
+
+	margin-bottom:1em;
+	text-align: center;
+}
+
+
+@include poliedro-grid('.grid-a', 0, 12);
+
+@include poliedro-grid('.grid-b', 3, 12);

@@ -1,0 +1,61 @@
+/** poliedro/grid/generator */
+
+// Box-sizing for prefix
+@import "compass/css3/box-sizing";
+
+// Poliedro Coun abstraction
+%poliedro-column{
+	// Use the new box model, in case we need to add padding and borders
+	@include box-sizing('border-box');
+	
+	display: inline-block;
+
+	// Borrowed from Twitter Bootstrap
+	position: relative;
+	min-height: 1px;
+	
+	// Can be variable if RTL support is needed
+	float: left;
+}
+
+
+@function get_column_width($size, $gutter, $columnNumber: 12, $precision: 1){
+	$gutterTotal: ($columnNumber - 1) * $gutter;
+	$columnWidth: ((100 - ($gutterTotal * 100)) / $columnNumber) / 100;
+
+	$result: ($columnWidth * $size) + (($size - 1) * $gutter);
+
+	@return percentage($result) - ($precision / 10);
+}
+ 
+@mixin poliedro-column($size, $gutter, $columnNumber){
+	width: get_column_width($size, $gutter, $columnNumber);
+
+	@if($gutter){
+		margin-right:percentage($gutter);
+	}
+}
+
+@mixin poliedro-omega{
+	// To fit 100% width, regarless $precition value
+	right:0;
+	
+	clear:right;
+	margin-right:0;
+}
+
+
+@mixin poliedro-grid($prefix, $gutter, $columns: 12, $padding: 0){
+	// Base columns
+	@for $i from 1 through $columns{
+		#{$prefix}-#{$i}{
+			@extend %poliedro-column;
+			@include poliedro-column($i, $gutter / 100, $columns);
+		}
+	}
+
+	// Omega column
+	#{$prefix}-omega{
+		@include poliedro-omega();
+	}
+}
