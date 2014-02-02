@@ -2,3 +2,20 @@
 // This file is meant to be compiled in development
 
 @import "poliedro";
+
+
+main{
+	width:960px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+[class^=col]{
+	background-color:#F9F9F9;
+	border:1px solid #D4D4D4;
+
+	margin-bottom:1em;
+
+	text-align: center;
+}
