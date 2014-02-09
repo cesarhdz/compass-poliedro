@@ -1,8 +1,13 @@
-<% @title = "Basic Grid" %>
+<% @title = "Responsive Grid" %>
 
 
 <pre>
 	<code>
+// Mobile first
+@media screen{
+	@include poliedro-grid('.grid-sm', 3, 12);
+}
+
 // Medium
 @media screen and (min-width:768px){
 	@include poliedro-grid('.grid-md', 3, 12);
@@ -16,17 +21,41 @@
 </pre>
 
 <section>
-<!-- First Row -->
+<!-- First Row 12, -->
 <% (1..12).each do |col| %>
 	<%
+		omega_sm = (col % 2 == 0) ? ' grid-sm-omega' : ''
 		omega_md = (col % 6 == 0) ? ' grid-md-omega' : ''
 		omega_lg = (col % 12 == 0) ? ' grid-lg-omega' : ''
 	%>
 
-	<div class="grid-md-2 grid-lg-1<%= omega_md + omega_lg %>"><p>1</p></div>
+	<div class="grid-sm-6 grid-md-2 grid-lg-1<%= omega_sm + omega_md + omega_lg %>"><p>1</p></div>
 <% end %>
 
 
-</section><!-- .grid-1 -->
+<!-- Second Row: 4, 2, 1 -->
+<% (1..4).each do |col| %>
+	<%
+		omega_md = (col % 2 == 0) ? ' grid-md-omega' : ''
+		omega_lg = (col % 4 == 0) ? ' grid-lg-omega' : ''
+	%>
+
+	<div class="grid-sm-12 grid-md-6 grid-lg-3<%= omega_md + omega_lg %>"><p>3</p></div>
+<% end %>
+
+<!-- Third row: 2, 1, 1 -->
+<% (1..2).each do |col| %>
+	<%
+		omega_lg = (col % 2 == 0) ? ' grid-lg-omega' : ''
+	%>
+
+	<div class="grid-sm-12 grid-md-12 grid-lg-6<%= omega_lg %>"><p>6</p></div>
+<% end %>
+
+<!-- Fourth row: 1, 1, 1 -->
+<div class="grid-sm-12 grid-md-12 grid-lg-12"><p>12</p></div>
+
+
+</section>
 
 	
