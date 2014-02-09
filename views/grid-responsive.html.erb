@@ -1,0 +1,32 @@
+<% @title = "Basic Grid" %>
+
+
+<pre>
+	<code>
+// Medium
+@media screen and (min-width:768px){
+	@include poliedro-grid('.grid-md', 3, 12);
+}
+
+// Wide
+@media screen and (min-width:1024px){
+	@include poliedro-grid('.grid-lg', 3, 12);
+}
+	</code>
+</pre>
+
+<section>
+<!-- First Row -->
+<% (1..12).each do |col| %>
+	<%
+		omega_md = (col % 6 == 0) ? ' grid-md-omega' : ''
+		omega_lg = (col % 12 == 0) ? ' grid-lg-omega' : ''
+	%>
+
+	<div class="grid-md-2 grid-lg-1<%= omega_md + omega_lg %>"><p>1</p></div>
+<% end %>
+
+
+</section><!-- .grid-1 -->
+
+	
