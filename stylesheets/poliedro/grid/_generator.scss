@@ -24,7 +24,7 @@
 
 
 
-@function get_column_width($size, $gutter, $columnNumber: 12, $precision: 1){
+@function get_column_width($size, $gutter, $columnNumber: 12, $precision: 0){
 	$gutterTotal: ($columnNumber - 1) * $gutter;
 	$columnWidth: ((100 - ($gutterTotal * 100)) / $columnNumber) / 100;
 
