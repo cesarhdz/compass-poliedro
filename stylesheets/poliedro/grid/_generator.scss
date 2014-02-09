@@ -4,7 +4,7 @@
 @import "compass/css3/box-sizing";
 
 // Poliedro Coun abstraction
-%poliedro-column{
+@mixin abstract-column{
 	// Use the new box model, in case we need to add padding and borders
 	@include box-sizing('border-box');
 	
@@ -18,8 +18,13 @@
 	float: left;
 }
 
+%poliedro-column{
+	@include abstract-column;
+}
 
-@function get_column_width($size, $gutter, $columnNumber: 12, $precision: 1){
+
+
+@function get_column_width($size, $gutter, $columnNumber: 12, $precision: 0){
 	$gutterTotal: ($columnNumber - 1) * $gutter;
 	$columnWidth: ((100 - ($gutterTotal * 100)) / $columnNumber) / 100;
 
@@ -46,10 +51,18 @@
 
 
 @mixin poliedro-grid($prefix, $gutter, $columns: 12, $padding: 0){
+	
+	$abstract-column: #{$prefix}-abstract-column;
+
+	// Abstract column
+	#{$abstract-column}{
+		@include abstract-column;
+	}
+
 	// Base columns
 	@for $i from 1 through $columns{
 		#{$prefix}-#{$i}{
-			@extend %poliedro-column;
+			@extend #{$abstract-column};
 			@include poliedro-column($i, $gutter / 100, $columns);
 		}
 	}

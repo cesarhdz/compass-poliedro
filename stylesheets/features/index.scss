@@ -22,6 +22,25 @@ main{
 }
 
 
+// Basic Grid
 @include poliedro-grid('.grid-a', 0, 12);
 
+// Grid with Gutter
 @include poliedro-grid('.grid-b', 3, 12);
+
+/** Responsive Grid */
+
+// Mobile first
+@media screen{
+	@include poliedro-grid('.grid-sm', 3, 12);
+}
+
+// Medium
+@media screen and (min-width:768px){
+	@include poliedro-grid('.grid-md', 3, 12);
+}
+
+// Wide
+@media screen and (min-width:1024px){
+	@include poliedro-grid('.grid-lg', 3, 12);
+}
