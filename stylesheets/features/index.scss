@@ -21,6 +21,13 @@ main{
 	text-align: center;
 }
 
+.parent{
+	padding:1em;
+}
+
+[class^=grid-] > div {
+	background-color: rgb(233, 233, 233);
+}
 
 // Basic Grid
 @include poliedro-grid('.grid-a', 0, 12);
@@ -44,3 +51,8 @@ main{
 @media screen and (min-width:1024px){
 	@include poliedro-grid('.grid-lg', 3, 12);
 }
+
+
+/** Nested Grid */
+@include poliedro-grid('.grid-n', 2, 12);
+

@@ -1,0 +1,42 @@
+<% @title = "Nested Grid" %>
+
+
+<pre>
+	<code>@include poliedro-grid('.grid-n', 2, 12);</code>
+</pre>
+
+<section>
+
+<!-- Grid 3 -->
+<div class="grid-n-3"><p>3</p></div>
+<div class="grid-n-3"><p>3</p></div>
+<div class="grid-n-3"><p>3</p></div>
+<div class="grid-n-3 grid-n-omega"><p>3</p></div>
+
+<!-- Nested grid -->
+<div class="grid-n-6 parent">
+
+	<div class="grid-n-12"><p>12</p></div>
+
+	<div class="grid-n-6"><p>6</p></div>
+	<div class="grid-n-6 grid-n-omega"><p>6</p></div>
+	
+	<div class="grid-n-3"><p>3</p></div>
+	<div class="grid-n-3"><p>3</p></div>
+	<div class="grid-n-3"><p>3</p></div>
+	<div class="grid-n-3 grid-n-omega"><p>3</p></div>
+</div>
+
+<div class="grid-n-6 grid-n-omega"><p>6</p></div>
+
+<div class="grid-n-3"><p>3</p></div>
+<div class="grid-n-3 grid-n-omega"><p>3</p></div>
+
+
+<div class="grid-n-2"><p>2</p></div>
+<div class="grid-n-2"><p>2</p></div>
+<div class="grid-n-2 grid-n-omega"><p>2</p></div>
+
+</section>
+
+	
