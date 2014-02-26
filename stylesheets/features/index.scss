@@ -34,6 +34,10 @@ $poliedro-offset-prefix: 'o';
 $poliedro-omega-suffix: 'br';
 @include poliedro-grid('.grid-a', 0, 12);
 
+
+// Rever default
+$poliedro-omega-suffix: 'omega';
+
 // Grid with Gutter
 @include poliedro-grid('.grid-b', 3, 12);
 

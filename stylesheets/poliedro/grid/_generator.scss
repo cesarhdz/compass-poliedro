@@ -12,6 +12,9 @@
 	
 	// Can be variable if RTL support is needed
 	float: left;
+
+	// Avoid omega rules override column layout in mobile first grids
+	+ * { clear:none; }
 }
 
 %poliedro-column{
@@ -38,15 +41,14 @@
 }
 
 @mixin poliedro-omega{
-
-	clear:right;
-
-	// Instead of clearing flost to the element, the following element
-	// will be clear right
-	+ * { clear:left; }
-
+	margin-right:0;
 }
 
+@mixin poliedro-break{
+	// Instead of clearing float to the element, the following element
+	// will be cleared left
+	+ * { clear:left; }
+}
 
 @mixin poliedro-grid($prefix, $gutter, $columns: 12, $padding: 0){
 	
@@ -74,6 +76,11 @@
 	// Omega column
 	#{$prefix}-#{$poliedro-omega-suffix}{
 		@include poliedro-omega();
+	}
+
+	#{$prefix}-#{$poliedro-break-suffix}{
+		@extend #{$prefix}-#{$poliedro-omega-suffix};
+		@include poliedro-break();
 	}
 
 }
