@@ -36,11 +36,13 @@
 }
 
 @mixin poliedro-omega{
-	// To fit 100% width, regarless $precition value
-	right:0;
-	
+
 	clear:right;
-	margin-right:0;
+
+	// Instead of clearing flost to the element, the following element
+	// will be clear right
+	+ * { clear:left; }
+
 }
 
 $poliedro-offset-prefix: 'offset-' !default;
