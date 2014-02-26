@@ -43,8 +43,7 @@
 	margin-right:0;
 }
 
-
-$offset-prefix: 'offset' !default;
+$poliedro-offset-prefix: 'offset-' !default;
 
 
 @mixin poliedro-grid($prefix, $gutter, $columns: 12, $padding: 0){
@@ -64,6 +63,7 @@ $offset-prefix: 'offset' !default;
 		}
 
 		// Offset helper
+		#{$prefix}-#{$poliedro-offset-prefix}#{$i}{
 		#{$prefix}-#{$offset-prefix}-#{$i}{
 			margin-left: get_column_width($i, $gutter / 100, $columns);
 		}
