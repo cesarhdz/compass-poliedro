@@ -1,5 +1,7 @@
 /** poliedro/grid/generator */
 
+@import "poliedro/grid/variables";
+
 // Poliedro Coun abstraction
 @mixin abstract-column{
 	display: inline-block;
@@ -36,14 +38,14 @@
 }
 
 @mixin poliedro-omega{
-	// To fit 100% width, regarless $precition value
-	right:0;
-	
-	clear:right;
-	margin-right:0;
-}
 
-$poliedro-offset-prefix: 'offset-' !default;
+	clear:right;
+
+	// Instead of clearing flost to the element, the following element
+	// will be clear right
+	+ * { clear:left; }
+
+}
 
 
 @mixin poliedro-grid($prefix, $gutter, $columns: 12, $padding: 0){
@@ -70,7 +72,7 @@ $poliedro-offset-prefix: 'offset-' !default;
 	}
 
 	// Omega column
-	#{$prefix}-omega{
+	#{$prefix}-#{$poliedro-omega-suffix}{
 		@include poliedro-omega();
 	}
 
