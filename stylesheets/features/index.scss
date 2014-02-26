@@ -30,6 +30,7 @@ main{
 }
 
 // Basic Grid
+$poliedro-offset-prefix: 'o';
 @include poliedro-grid('.grid-a', 0, 12);
 
 // Grid with Gutter
