@@ -1,13 +1,7 @@
 /** poliedro/grid/generator */
 
-// Box-sizing for prefix
-@import "compass/css3/box-sizing";
-
 // Poliedro Coun abstraction
 @mixin abstract-column{
-	// Use the new box model, in case we need to add padding and borders
-	@include box-sizing('border-box');
-	
 	display: inline-block;
 
 	// Borrowed from Twitter Bootstrap

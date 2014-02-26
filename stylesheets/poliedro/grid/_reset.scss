@@ -1,0 +1,9 @@
+/** poliedro/grid/reset */
+
+@import "compass/css3/box-sizing";
+
+// apply a natural box layout model to all elements
+// http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+*, *:before, *:after {
+	@include box-sizing('border-box');
+}
