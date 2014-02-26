@@ -24,3 +24,7 @@ tmp
 .sass-cache/
 public/*
 !public/.gitkeep
+
+
+# Grunt
+node_modules/

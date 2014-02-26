@@ -1,0 +1,18 @@
+{
+  "name": "compass-poliedro",
+  "version": "0.0.1",
+  "description": "TODO: Write a gem description",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cesarhdz/compass-poliedro.git"
+  },
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/cesarhdz/compass-poliedro/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
