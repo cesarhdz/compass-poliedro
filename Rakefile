@@ -16,6 +16,21 @@ task :watch do
 end
 
 
+desc "Livereload support via Grunt Livereload"
+task :livereload do
+	# require npm install grunt-contrib-watch --save-dev
 
-desc "Run serve and watch compass files"
-multitask :dev => [ 'serve', 'watch' ]
+	# Borrowed from https://github.com/jwebcat/rake-jekyll-grunt/blob/master/Rakefile
+  	gruntPid = Process.spawn({"GRUNT_ENV"=>"grunt"}, "grunt watch")
+
+	trap("INT") {
+    	Process.kill(9, gruntPid) rescue Errno::ESRCH
+    	exit 0
+  	}
+
+  	Process.wait gruntPid
+end
+
+
+desc "Run app in dev mode"
+multitask :run => [ 'serve', 'watch', 'livereload' ]
