@@ -48,6 +48,7 @@ $poliedro-offset-prefix: 'offset-' !default;
 
 @mixin poliedro-grid($prefix, $gutter, $columns: 12, $padding: 0){
 	
+	$gutter: $gutter / 100;
 	$abstract-column: #{$prefix}-abstract-column;
 
 	// Abstract column
@@ -59,13 +60,12 @@ $poliedro-offset-prefix: 'offset-' !default;
 	@for $i from 1 through $columns{
 		#{$prefix}-#{$i}{
 			@extend #{$abstract-column};
-			@include poliedro-column($i, $gutter / 100, $columns);
+			@include poliedro-column($i, $gutter, $columns);
 		}
 
 		// Offset helper
 		#{$prefix}-#{$poliedro-offset-prefix}#{$i}{
-		#{$prefix}-#{$offset-prefix}-#{$i}{
-			margin-left: get_column_width($i, $gutter / 100, $columns);
+			margin-left: get_column_width($i, $gutter, $columns);
 		}
 	}
 
