@@ -40,10 +40,11 @@
 @mixin poliedro-omega{
 
 	clear:right;
+	margin-right:0;
 
 	// Instead of clearing flost to the element, the following element
 	// will be clear right
-	+ * { clear:left; }
+	// + * { clear:left; }
 
 }
 
