@@ -1,6 +1,7 @@
 /** poliedro/grid/generator */
 
 @import "poliedro/grid/variables";
+@import "poliedro/grid/mixins";
 
 // Poliedro Coun abstraction
 @mixin abstract-column{
@@ -40,15 +41,6 @@
 	}
 }
 
-@mixin poliedro-omega{
-	margin-right:0;
-}
-
-@mixin poliedro-break{
-	// Instead of clearing float to the element, the following element
-	// will be cleared left
-	+ * { clear:left; }
-}
 
 @mixin poliedro-grid($prefix, $gutter, $columns: 12, $padding: 0){
 	
@@ -81,6 +73,12 @@
 	#{$prefix}-#{$poliedro-break-suffix}{
 		@extend #{$prefix}-#{$poliedro-omega-suffix};
 		@include poliedro-break();
+	}
+
+	// Centered Column
+	// It allows only one column per row
+	#{$prefix}-#{$poliedro-center-suffix}{
+		@include poliedro-center();
 	}
 
 }

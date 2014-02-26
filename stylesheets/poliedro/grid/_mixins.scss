@@ -1,0 +1,21 @@
+/** poliedro/grid/mixins */
+
+@mixin poliedro-omega{
+	margin-right:0;
+}
+
+@mixin poliedro-break{
+	// Instead of clearing float to the element, the following element
+	// will be cleared left
+	+ * { clear:left; }
+}
+
+@mixin poliedro-center{
+	// No longer a floated column
+	float:none;
+	display:block;
+
+	// Centered with margin because ii already has width
+	margin-left:auto;
+	margin-right:auto;
+}
