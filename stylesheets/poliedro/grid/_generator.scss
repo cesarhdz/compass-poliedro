@@ -1,5 +1,7 @@
 /** poliedro/grid/generator */
 
+@import "poliedro/grid/variables";
+
 // Poliedro Coun abstraction
 @mixin abstract-column{
 	display: inline-block;
@@ -45,8 +47,6 @@
 
 }
 
-$poliedro-offset-prefix: 'offset-' !default;
-
 
 @mixin poliedro-grid($prefix, $gutter, $columns: 12, $padding: 0){
 	
@@ -72,7 +72,7 @@ $poliedro-offset-prefix: 'offset-' !default;
 	}
 
 	// Omega column
-	#{$prefix}-omega{
+	#{$prefix}-#{$poliedro-omega-suffix}{
 		@include poliedro-omega();
 	}
 
