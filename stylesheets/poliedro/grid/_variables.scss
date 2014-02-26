@@ -14,7 +14,13 @@ $poliedro-offset-prefix: 'offset-' !default;
 $poliedro-omega-suffix: 'omega' !default;
 
 /**
- * Poliedro Omega Suffix
- * Defines suffix for omega columns
+ * Poliedro Break Suffix
+ * Defines suffix for row nd or column break
  */
 $poliedro-break-suffix: 'br' !default;
+
+/**
+ * Poliedro center Suffix
+ * Defines suffix for centered columns
+ */
+$poliedro-center-suffix: 'center' !default;
