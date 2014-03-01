@@ -81,4 +81,18 @@
 		@include poliedro-center();
 	}
 
+	// Pull Placeholder
+	// Set the inverse value of float property
+	#{$prefix}-#{$poliedro-pull-suffix}{
+		@include poliedro-pull();
+	}
+
+	// Pull-Omega
+	// This placeholder must be applied to the first pulled
+	// element of the row.
+	#{$prefix}-#{$poliedro-pull-suffix}-#{$poliedro-omega-suffix}{
+		@extend #{$prefix}-#{$poliedro-pull-suffix};
+		@extend #{$prefix}-#{$poliedro-omega-suffix};
+	}
+
 }
