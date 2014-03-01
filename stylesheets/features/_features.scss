@@ -1,0 +1,28 @@
+/**
+ * Features Site styles
+ */
+
+@media screen and (min-width:1024px){
+	@include poliedro-grid('%grid-f', 0, 5);
+}
+
+
+%block-padding{
+	padding-left:1em;
+	padding-right:1em;
+}
+
+section[role=banner]{
+
+	@extend %grid-f-1;
+	@extend %block-padding;
+
+}
+
+main{
+	
+	@extend %grid-f-4;
+	@extend %grid-f-pull-omega;
+
+	@extend %block-padding;
+}
