@@ -55,7 +55,7 @@ body > nav {
 nav {
 	ul{
 		list-style:none;
-		padding:.75em 0;
+		padding:1.5em 0;
 	}
 
 	a{ 
@@ -95,5 +95,42 @@ body{
 main{
 	h1{
 		@extend %header-a1;
+	}
+}
+
+/** Logo */
+[role="banner"]{
+
+	background:$color-b2 url('/img/poliedro.png') right center no-repeat;
+	overflow:hidden;
+
+
+	h1{
+		max-width: 300px;
+		float:left;
+
+		margin:0 32px 16px 0;
+
+		font-size: 40px;
+		text-transform: uppercase;
+		color:$color-c4;
+		line-height: 1;
+
+		// First word with different color
+		&:first-line{
+			font-size:16px;
+			color: $color-d4;
+		}
+	}
+
+	p{
+		max-width:300px;
+		float:left;
+
+		color:$color-c4;
+		padding-top:1.5em;
+
+		margin-top:0;
+
 	}
 }
