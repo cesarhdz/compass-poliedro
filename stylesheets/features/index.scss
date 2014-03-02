@@ -13,21 +13,11 @@ main{
 }
 
 
-[class^=grid-]{
-	background-color:#F9F9F9;
-	border:1px solid #D4D4D4;
-
-	margin-bottom:1em;
-	text-align: center;
-}
-
 .parent{
 	padding:1em;
 }
 
-[class^=grid-] > div {
-	background-color: rgb(233, 233, 233);
-}
+
 
 // Basic Grid
 $poliedro-offset-prefix: 'o';
@@ -57,4 +47,47 @@ $poliedro-offset-prefix: 'o';
 
 /** Nested Grid */
 @include poliedro-grid('.grid-n', 2, 12);
+
+
+/** Column Colors */
+
+$color-a4: #775BA3;
+$color-a6: #442D65;
+
+$color-b2: #FBF0D9;
+$color-b4: #F8E1B4;
+
+$color-c4: #F98A5F;
+
+$color-d4: #91C5A9;
+
+
+[class^="grid-"]{
+	background-color:$color-c4;
+	border:1px solid $color-b4;
+
+	color: $color-a6;
+
+	margin-bottom:1em;
+	text-align: center;
+
+	p {
+		font-weight: 700;
+		font-size:1.25em;
+	}
+
+	> [class^="grid-"]{
+		background-color:$color-d4;
+	}
+}
+
+main > section{
+	
+	background-color: $color-b2;
+
+	padding-top:1em;
+
+	overflow:hidden;
+
+}
 
