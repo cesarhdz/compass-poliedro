@@ -22,8 +22,6 @@ tmp
 
 # Dev Mode (Serve + Compass)
 .sass-cache/
-public/*
-!public/.gitkeep
 
 
 # Grunt
