@@ -2,6 +2,17 @@
  * Features Site styles
  */
 
+$color-a4: #775BA3;
+$color-a6: #442D65;
+
+$color-b2: #FBF0D9;
+$color-b4: #F8E1B4;
+
+$color-c4: #F98A5F;
+
+$color-d4: #91C5A9;
+
+
 @media screen and (min-width:1024px){
 	@include poliedro-grid('%grid-f', 0, 5);
 }
@@ -14,8 +25,10 @@
 
 section[role=banner]{
 
-	@extend %grid-f-1;
+	@extend %grid-f-5;
 	@extend %block-padding;
+
+	margin-bottom:2em;
 
 }
 
@@ -25,4 +38,62 @@ main{
 	@extend %grid-f-pull-omega;
 
 	@extend %block-padding;
+}
+
+
+body > nav {
+	@extend %grid-f-1;
+	@extend %block-padding;
+
+	// Hidden menu title
+	h2{ 
+		position:absolute;
+		left:-9999em;
+	}
+}
+
+nav {
+	ul{
+		list-style:none;
+		padding:.75em 0;
+	}
+
+	a{ 
+		text-decoration: none; 
+		line-height: 1.5;
+	}
+}
+
+
+
+
+/** Typo */
+@mixin font-a{
+	font-family: 'Raleway', sans-serif;
+}
+
+
+%header-a1{
+	font-size:72px;
+	font-weight: 100;
+	color:$color-a6;
+
+	margin:0;
+}
+
+%header-a2{
+	font-size:64px;
+}
+
+
+
+
+body{
+	@include font-a;
+}
+
+main{
+	h1{
+		@extend %header-a1;
+	}
 }

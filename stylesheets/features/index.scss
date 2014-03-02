@@ -50,18 +50,6 @@ $poliedro-offset-prefix: 'o';
 
 
 /** Column Colors */
-
-$color-a4: #775BA3;
-$color-a6: #442D65;
-
-$color-b2: #FBF0D9;
-$color-b4: #F8E1B4;
-
-$color-c4: #F98A5F;
-
-$color-d4: #91C5A9;
-
-
 [class^="grid-"]{
 	background-color:$color-c4;
 	border:1px solid $color-b4;

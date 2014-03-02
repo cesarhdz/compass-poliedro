@@ -4,13 +4,20 @@
     <meta charset="utf-8">
     <title><%= @title %> | Compass Poliedro</title>
 
+    <!-- Normaliza & custom fonts -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,900,100' rel='stylesheet' type='text/css'>
+    
     <link rel="stylesheet" href="/css/features/index.css?t=<%= Time.new.to_time.to_i %>">
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
   <body>
+    <section role="banner">
+      <%= render 'shared/site-header' %>
+    </section><!-- section[role=banner] -->
+
     <main>
       <header>
         <h1><%= @title %></h1>
@@ -20,11 +27,8 @@
       <%= yield %>
     </main><!-- main -->
 
-    <section role="banner">
-      <%= render 'shared/site-header' %>
-      <%= render 'shared/site-nav' %>
-    </section><!-- section[role=banner] -->
 
+    <%= render 'shared/site-nav' %>
 
     <script src="//localhost:35729/livereload.js"></script>
   </body>
