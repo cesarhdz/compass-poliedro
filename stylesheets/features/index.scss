@@ -2,32 +2,13 @@
 // This file is meant to be compiled in development
 
 @import "poliedro";
-
-
-main{
-	max-width:1280px;
-	min-width:320px;
-
-	margin-left:auto;
-	margin-right:auto;
-}
-
-
-[class^=grid-]{
-	background-color:#F9F9F9;
-	border:1px solid #D4D4D4;
-
-	margin-bottom:1em;
-	text-align: center;
-}
+@import "features";
 
 .parent{
 	padding:1em;
 }
 
-[class^=grid-] > div {
-	background-color: rgb(233, 233, 233);
-}
+
 
 // Basic Grid
 $poliedro-offset-prefix: 'o';
@@ -57,4 +38,35 @@ $poliedro-offset-prefix: 'o';
 
 /** Nested Grid */
 @include poliedro-grid('.grid-n', 2, 12);
+
+
+/** Column Colors */
+[class^="grid-"]{
+	background-color:$color-c4;
+	border:1px solid $color-b4;
+
+	color: $color-a6;
+
+	margin-bottom:1em;
+	text-align: center;
+
+	p {
+		font-weight: 700;
+		font-size:1.25em;
+	}
+
+	> [class^="grid-"]{
+		background-color:$color-d4;
+	}
+}
+
+.sample-grid{
+	
+	background-color: $color-b2;
+
+	padding-top:1em;
+
+	overflow:hidden;
+
+}
 

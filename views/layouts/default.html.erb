@@ -2,20 +2,33 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><%= @title %></title>
+    <title><%= @title %> | Compass Poliedro</title>
 
-    <!-- Es importante agergar primero las fuentes y luego los estilos -->
+    <!-- Normaliza & custom fonts -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.0/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,900,100' rel='stylesheet' type='text/css'>
+    
     <link rel="stylesheet" href="/css/features/index.css?t=<%= Time.new.to_time.to_i %>">
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
   <body>
-    <main>
-      <h1><%= @title %></h1>
-      <%= yield %>
-    </main><!-- main > div -->
+    <section role="banner">
+      <%= render 'shared/site-header' %>
+    </section><!-- section[role=banner] -->
 
+    <main>
+      <header>
+        <h1><%= @title %></h1>
+        <p><%= @section %></p>
+      </header>
+
+      <%= yield %>
+    </main><!-- main -->
+
+
+    <%= render 'shared/site-nav' %>
 
     <script src="//localhost:35729/livereload.js"></script>
   </body>
