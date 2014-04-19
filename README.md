@@ -8,13 +8,13 @@ CSS grid generator made with intelligent selectors in mind. Main features:
 - __Intelligent Selectors__ support through placeholders. 
 - __Fully customizable__: selector, gutter, prefix and column number are configurable.
 - Utility classes 
-    -  ~offset-x~ move the column x column-width. 
-    -  ~omega~  declares the last column of the row
-    -  ~center~ Center the column
-    - ~push~ change column order 
-    - ~break~ Insert a row break, 
+    - `offset-x` move the column x column-width. 
+    - `omega`  declares the last column of the row
+    - `center` Center the column
+    - `push` change column order 
+    - `break` Insert a row break
 
-[See  Poliedro in action](http://cesarhdz.github.io/compass-poliedro)
+[See Poliedro in action](http://cesarhdz.github.io/compass-poliedro)
  
 
 <!-- 
@@ -27,8 +27,6 @@ CSS grid generator made with intelligent selectors in mind. Main features:
 @TODO rtl support
  
 -->
-
-[^omega]: ~omega~ columns must be declared explicitly, it's an small price to ged rid of rows.
 
 ## Installation
 
@@ -57,7 +55,7 @@ Import poliedro in your styles
 
 ### Grids
 
-Poliedro doesn't create any grid, you must generate them using ~poliedro-grid~ mixin.
+Poliedro doesn't create any grid, you must generate them using `poliedro-grid` mixin.
 
     @include poliedro-grid($prefix, $gutter, $columns);
 
@@ -83,3 +81,5 @@ In dev mode Poliedro requires node.js and npm, because of grunt and livereload. 
 Then open your browser in
 
     http://localhost:4000
+
+[^omega]: `omega` columns must be declared explicitly, it's an small price to ged rid of rows.
