@@ -12,7 +12,8 @@
     "url": "https://github.com/cesarhdz/compass-poliedro/issues"
   },
   "devDependencies": {
-    "grunt": "~0.4.2",
-    "grunt-contrib-watch": "~0.5.3"
+    "grunt": "~0.4.4",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-gh-pages": "~0.9.1"
   }
 }
