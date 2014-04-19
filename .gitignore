@@ -26,3 +26,5 @@ tmp
 
 # Grunt
 node_modules/
+/gh-page/
+.grunt/

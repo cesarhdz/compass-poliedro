@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     // Github-pages
     'gh-pages': {
       options: {
-        base: 'docs'
+        base: 'gh-page'
       },
       src: ['**']
     },

@@ -3,6 +3,8 @@ require 'rake'
 require 'fileutils'
 
 
+gh_page = "http://cesarhdz.github.io/compass-poliedro/"
+
 desc "serve alias"
 task :serve do
   port = "4000"
@@ -34,13 +36,14 @@ task :livereload do
 end
 
 
-task :docs do
+task :ghpage do
+  doc_dir = 'gh-page'
+  ENV['SERVE_URL'] = gh_page
 
-  doc_dir = 'docs'
-
-  FileUtils.rm_rf('docs')
+  FileUtils.rm_rf doc_dir
   system "compass compile -c compass.config.rb -e production"
   system "serve export . #{doc_dir}"
+  # system "grunt gh-pages"
 end
 
 
